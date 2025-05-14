@@ -1,5 +1,4 @@
 import { useParams } from "react-router-dom";
-import ProdectDetails from "../../data/productDetails";
 import { Box, Card, CardContent, Typography } from "@mui/material";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
