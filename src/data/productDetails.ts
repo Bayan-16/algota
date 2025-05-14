@@ -858,7 +858,8 @@ export default [
       },
       {
         image: img145,
-        name: "Raw sesame",
+        name: "سمسم خام",
+        nameEn: "Raw sesame",
         id: "145",
         pieceWieght: "60g",
         numOf: "72",
@@ -1282,7 +1283,7 @@ export default [
         id: "191",
         pieceWieght: "80g",
         numOf: "72",
-        parcelBarcode: "6210923144307",
+        parcelBarcode: "parcelBarcode",
       },
       {
         image: img192,

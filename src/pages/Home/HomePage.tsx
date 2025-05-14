@@ -6,7 +6,9 @@ import Events from "./Events";
 import News from "./News";
 import Footer from "./Footer";
 import Preloader from "../../components/Preloader";
-import ProductPopup from "./ProductPopUp";
+
+import ProductPopup from "./ProductPopup";
+import ProductsTest from "./ProductsTest";
 
 const HomePage = () => {
   return (
@@ -15,7 +17,8 @@ const HomePage = () => {
       <ProductPopup />
       <Landing1 />
       <AboutUs />
-      <Products />
+      {/* <Products /> */}
+      <ProductsTest />
       <Places />
       <Events />
       <News />

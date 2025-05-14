@@ -8,6 +8,7 @@ import Preloader from "../../components/Preloader";
 import { TabTitle } from "../../components/Title";
 import { motion } from "motion/react";
 import EndFooter from "../Home/EndFooter";
+import { useTest } from "../../hooks/useTest";
 
 const styles = {
   padding: "25px",
@@ -28,8 +29,18 @@ const ProductsDetails = () => {
   /* -------------------------------------------------------------------------- */
   /*                                 Fetch Data                                 */
   /* -------------------------------------------------------------------------- */
-  let { id } = useParams();
-  const product = ProdectDetails.find((product) => String(product.id) === id);
+  // let { id } = useParams();
+  // const product = ProdectDetails.find((product) => String(product.id) === id);
+
+  const { id } = useParams();
+  const { data, isLoading } = useTest();
+
+  console.log(data);
+  if (isLoading) return <p>جاري التحميل...</p>;
+
+  const product = data?.find((p) => String(p.id) === id);
+
+  if (!product) return <p>القسم غير موجود</p>;
 
   /* -------------------------------------------------------------------------- */
   /*                                    Title                                   */
@@ -214,7 +225,7 @@ const ProductsDetails = () => {
                   modules={[Navigation]}
                   className="mySwiper"
                 >
-                  {product?.section1.map((our) => (
+                  {product?.section1.map((our: any) => (
                     <SwiperSlide
                       style={{ height: "500px", maxWidth: "100%" }}
                       key={our.id}
@@ -313,7 +324,7 @@ const ProductsDetails = () => {
                   modules={[Navigation]}
                   className="mySwiper"
                 >
-                  {product?.section1?.map((our) => (
+                  {product?.section1?.map((our: any) => (
                     <SwiperSlide
                       style={{ height: "500px", maxWidth: "100%" }}
                       key={our.id}
@@ -427,7 +438,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section1.map((our) => (
+                    {product?.section1.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -527,7 +538,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section1?.map((our) => (
+                    {product?.section1?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -630,7 +641,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section2?.map((our) => (
+                    {product?.section2?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -730,7 +741,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section2?.map((our) => (
+                    {product?.section2?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -841,7 +852,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section1.map((our) => (
+                    {product?.section1.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -941,7 +952,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section1?.map((our) => (
+                    {product?.section1?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -1044,7 +1055,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section2?.map((our) => (
+                    {product?.section2?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -1144,7 +1155,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section2?.map((our) => (
+                    {product?.section2?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -1247,7 +1258,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section3?.map((our) => (
+                    {product?.section3?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
@@ -1347,7 +1358,7 @@ const ProductsDetails = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                   >
-                    {product?.section3?.map((our) => (
+                    {product?.section3?.map((our: any) => (
                       <SwiperSlide
                         style={{ height: "500px", maxWidth: "100%" }}
                         key={our.id}
